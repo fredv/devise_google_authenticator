@@ -14,6 +14,10 @@ module Devise # :nodoc:
 
 	mattr_accessor :ga_remembertime
 	@@ga_remembertime = 1.month
+
+  mattr_accessor :ga_app_name
+
+  mattr_accessor :ga_issuer
 end
 
 # a security extension for devise

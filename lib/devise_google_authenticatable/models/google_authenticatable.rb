@@ -24,7 +24,9 @@ module Devise # :nodoc:
         end
 
         def assign_tmp
-          self.update_attributes(:gauth_tmp => ROTP::Base32.random_base32(32), :gauth_tmp_datetime => DateTime.now)
+          self.gauth_tmp = ROTP::Base32.random_base32(32)
+          self.gauth_tmp_datetime = DateTime.now
+          self.save!
           self.gauth_tmp
         end
 
