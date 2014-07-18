@@ -31,12 +31,10 @@ module Devise # :nodoc:
         end
 
         def validate_token(token)
-          binding.pry
           return false if self.gauth_tmp_datetime.nil?
           if self.gauth_tmp_datetime < self.class.ga_timeout.ago
             return false
           else
-            binding.pry
             valid_vals = []
             valid_vals << ROTP::TOTP.new(self.get_qr).at(Time.now)
             (1..self.class.ga_timedrift).each do |cc|

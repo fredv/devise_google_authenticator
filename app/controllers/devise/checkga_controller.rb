@@ -15,10 +15,8 @@ class Devise::CheckgaController < Devise::SessionsController
 
   def update
     resource = resource_class.find_by_gauth_tmp(params[resource_name]['tmpid'])
-    binding.pry
 
     if not resource.nil?
-      binding.pry
       if resource.validate_token(params[resource_name]['gauth_token'].to_i)
         set_flash_message(:notice, :signed_in) if is_navigational_format?
         sign_in(resource_name,resource)
