@@ -32,12 +32,12 @@ class Devise::CheckgaController < Devise::SessionsController
         end
       else
         set_flash_message(:error, :error)
-        redirect_to sign_in_path(resource)
+        redirect_to after_sign_in_path_for(resource)
       end
 
     else
       set_flash_message(:error, :error)
-      redirect_to sign_in_path(resource_name)
+      redirect_to after_sign_in_path_for(resource_name)
     end
   end
 
