@@ -221,6 +221,11 @@ Devise.setup do |config|
   # Change setting to how long to remember device before requiring another token. Change to nil to turn feature off.
   # To change the default, uncomment and change the below:
   # config.ga_remembertime = 1.month
-
+  #
+  # AppName for Google Authenticator
+  # config.ga_app_name = "MyApp"
+  #
+  # Issuer param for Google Authenticator
+  # config.ga_issuer = "myapp"
 
 end

@@ -15,7 +15,9 @@ module DeviseGoogleAuthenticator
         "  # Change setting to how long to remember device before requiring another token. Change to nil to turn feature off.\n" +
         "  # To change the default, uncomment and change the below:\n" +
         "  # config.ga_remembertime = 1.month\n\n" +
-        "\n", :before => /end[ |\n|]+\Z/
+        "  # config.ga_app_name = \"MyApp\"\n\n" +
+        "  # config.ga_issuer = \"myapp\"\n\n" +
+        "\n", before: /end[\ \n]+\Z/
       end
 
       def copy_locale
